@@ -8,11 +8,11 @@ cd SentenceSimilarity
 sudo docker-compose build
 sudo docker-compose up
 ```
-2) POST the request to **localhost:/Register** in the POSTMAN
+2) POST the request to **localhost:/register** in the **POSTMAN**
 ```
-{"username": "mehmed", "password": "123"
+{"username": "mehmed", "password": "123"}
 ``` 
-3) POST the request to **localhost:/detect** in the POSTMAN
+3) POST the request to **localhost:/detect** in the **POSTMAN**
 ```
 {"username": "mehmed", "password": "123", "text1":"This is a dog", "text2":"This is a human"}
 ```
