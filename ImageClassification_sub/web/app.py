@@ -107,10 +107,10 @@ class Classify(Resource):
         retJson = {}
         with open('temp.jpg', 'wb') as f:
             f.write(r.content)
-            proc = subprocess.Popen('python3 classify_image.py --model_dir=. --image_file=./temp.jpg', stdout=subprocess.PIPE, stderr=subprocess.STDOUT, shell=True)
+            proc = subprocess.Popen(['python3','classify_image.py','--image','temp.jpg'], stdout=subprocess.PIPE, stderr=subprocess.STDOUT, shell=True)
             ret = proc.communicate()[0]
             proc.wait()
-            with open("text.txt") as f:
+            with open("text.json") as f:
                 retJson = json.load(f)
 
 

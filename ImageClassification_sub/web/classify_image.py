@@ -42,9 +42,8 @@ def predict(model, img):
     for idx in indices[0][:5]:
         retJson[f'pred_{i}'] = str("label : {} and confidence : {}".format(labels[idx],percentage[idx].item()))
         i += 1
-    print(retJson)
+    # print(retJson)
     with open("text.json", "w", encoding="utf-8") as f:
         json.dump(retJson, f, ensure_ascii=False, indent=4)
-
 
 predict(model, args.image)
